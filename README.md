@@ -7,7 +7,10 @@
 This project provides easy-to-parse data about emoji, along with a spritesheet-style 
 images for use on the web.
 
-The current version supports Emoji version 16.0 (Oct 2024)
+The current version supports Emoji version 16.0 (Oct 2024). This fork also
+includes **Emoji 17.0** data (the 8 new emoji added on 2025-09-09); their Apple
+raster images are not yet bundled, so they render as Unicode characters until the
+PNGs are dropped into `emoji/`.
 
 You can see a catalog of the emoji data here: http://projects.iamcal.com/emoji-data/table.htm
 
@@ -183,3 +186,27 @@ missing emoji (see the spritesheet section above for more details).
 * https://github.com/joeattardi/emoji-button - Plain JavaScript emoji picker
 * https://github.com/missive/emoji-mart - React emoji picker components
 * https://github.com/Merrit/unicode_emojis - Dart package
+
+---
+
+## iOS Emoji Picker (this repository)
+
+This repository also ships a ready-to-use, offline **emoji picker** (an iOS-style
+web UI) on top of the emoji-data images.
+
+* `index.html` — the picker UI (search, categories, skin tones, dark mode,
+  favorites/recent, copy as character / `<img>` / path / name).
+* `picker.js` — generated data (codes, names, categories, search keywords,
+  skin-tone map, spritesheet coordinates). **Generated, do not edit by hand.**
+* `sheet.png` — a single spritesheet of every emoji, used for fast rendering.
+* `tools/build_picker.py` — regenerates `picker.js` and `sheet.png`:
+
+  ```bash
+  python3 tools/build_picker.py
+  ```
+
+To add the **Emoji 17.0** raster images, drop the Apple PNGs for the 8 new emoji
+(`emoji/1faea.png`, `emoji/1faef.png`, `emoji/1fac8.png`, `emoji/1facd.png`,
+`emoji/1f6d8.png`, `emoji/1fa8a.png`, `emoji/1fa8e.png`,
+`emoji/1f9d1-200d-1fa70.png`) into `emoji/` and re-run the build script — they
+will appear automatically, both in the spritesheet and the picker.

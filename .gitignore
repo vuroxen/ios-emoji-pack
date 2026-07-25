@@ -1,0 +1,6 @@
+# build vaqtinchalik fayllar
+tools/_sheet_order.txt
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store

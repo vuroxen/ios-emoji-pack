@@ -1,5 +1,18 @@
 # Change Log
 
+## 2026-07-25 : iOS Emoji Picker (17.0 tayyorgarligi)
+
+* Emoji 17.0 (2025-09-09) dagi 8 ta yangi emoji ma'lumotlarga qo'shildi
+  (Distorted Face, Fight Cloud, Hairy Creature, Orca, Landslide, Trombone,
+  Treasure Chest, Ballet Dancer). Apple rasmlari hali qo'shilmagan — ular
+  `emoji/<kod>.png` ga qo'yilganda avtomatik paydo bo'ladi.
+* Yangi `index.html` picker: bitta `sheet.png` spritesheet orqali ancha tezroq yuklanadi.
+* Qorong'u rejim (dark mode), teri rangi (skin tones) tanlovchisi.
+* Sevimli (favorites) va yaqindagilar (recent) bo'limlari (localStorage).
+* Belgiani, `<img>` kodi, fayl yo'li va short-name ni nusxalash.
+* O'zbekcha kategoriya nomlari va o'zbekcha qidiruv kalitlari.
+* `tools/build_picker.py` — ma'lumotlarni va spritesheet'ni qayta yaratuvchi vosita.
+
 ## 2025-09-24 : v16.0.0
 
 * Update to Emoji 16.0 (thanks to @nerixyz)
